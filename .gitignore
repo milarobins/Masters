@@ -1,0 +1,15 @@
+api_secrets.py
+
+__pycache__/*
+__pycache__
+
+.DS_Store
+/.DS_Store
+
+.venv
+.env
+
+Trial 1 Oral Exams
+Trial 2 Oral Exams
+Trial 3 Oral Exams
+Trial 4 Oral Exams
