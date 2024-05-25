@@ -34,7 +34,7 @@ def write_response_to_file(response, base_output_path, student_name, run_number)
     with open(output_file_path, 'w', encoding='utf-8') as file:
         file.write(response)
 
-student_name = "Owen"  # Replace with student name
+student_name = "Chang"  # Replace with student name
 
 def call_gpt4_api(prompt):
     response = client.chat.completions.create(
@@ -65,7 +65,7 @@ def main():
 
     question_marks = [10, 8, 8, 6, 3, 4]  # Corresponding marks for each question
 
-    for i in range(3):  # Loop to run the script 3 times
+    for i in range(6):  # Loop to run the script 3 times
         prompt = f"""Mark this \n{transcript}\n step by step:
 
 Step 1: Mark the responses to each of the \n{questions}\n and briefly justify your reasoning. The questions are worth the following marks respectively: {', '.join(map(str, question_marks))}.

@@ -18,13 +18,26 @@ def read_file(file_path):
         with open(file_path, 'r') as file:
             return file.read()
 
+def clean_transcript(transcript):
+    phrases_to_remove = [
+        r'\bVery very good\b',
+        r'\bPerfect\b',
+        r'\bVery good\b'
+    ]
+    for phrase in phrases_to_remove:
+        transcript = re.sub(phrase, '', transcript, flags=re.IGNORECASE)
+    return transcript
+
+def write_to_file(content, file_path):
+    with open(file_path, 'w') as file:
+        file.write(content)
+
 def write_response_to_file(response, base_output_path, student_name, run_number):
-    # Append run_number to file name to avoid overwriting
     output_file_path = os.path.join(base_output_path, f"{student_name}_Feedback_Run_{run_number}.txt")
     with open(output_file_path, 'w') as file:
         file.write(response)
 
-student_name = "Theo"  # Replace with student name
+student_name = "Mila"  # Replace with student name
 
 def call_gpt4_api(prompt):
     response = client.chat.completions.create(
@@ -38,15 +51,21 @@ def call_gpt4_api(prompt):
     return response.choices[0].message.content
 
 def main():
-    transcript_file_path = '/Users/admin/Desktop/Masters/Trial 4 Oral Exams/Trial 1 Transcripts empty confidence/Theo/Theo empty.docx'
-    questions_file_path = '/Users/admin/Desktop/Masters/Trial 1 Oral Exams/Questions/Theo questions.docx'
-    base_output_path = '/Users/admin/Desktop/Masters/Trial 4 Oral Exams/Trial 1 Transcripts empty confidence/Theo/Results'
+    transcript_file_path = '/Users/admin/Desktop/Masters/Trial 1 Oral Exams/Transcripts/Mila Transcript.docx'
+    questions_file_path = '/Users/admin/Desktop/Masters/Trial 1 Oral Exams/Questions/Mila questions.docx'
+    base_output_path = '/Users/admin/Desktop/Masters/Trial 4 Oral Exams/Trial 1 Auto Processed/Mila'
 
     transcript = read_file(transcript_file_path)
+    cleaned_transcript = clean_transcript(transcript)
+    
+    # Save cleaned transcript to a file for manual checking
+    cleaned_transcript_file_path = os.path.join(base_output_path, "Cleaned_Transcript.txt")
+    write_to_file(cleaned_transcript, cleaned_transcript_file_path)
+    
     questions = read_file(questions_file_path)
 
     for i in range(10):  # Loop to run the script 10 times
-        prompt = f"""Mark this \n{transcript}\n step by step:
+        prompt = f"""Mark this \n{cleaned_transcript}\n step by step:
 
 Step 1: Mark the responses to each of the five \n{questions}\n and briefly justify your reasoning. Each question is equally weighted and worth 4 marks.
 Question 4 requires separate answer uploads. You should provide commentary on the discussion surrounding Question 4 but 
