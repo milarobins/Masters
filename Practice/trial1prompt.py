@@ -24,7 +24,7 @@ def write_response_to_file(response, base_output_path, student_name, run_number)
     with open(output_file_path, 'w') as file:
         file.write(response)
 
-student_name = "Theo"  # Replace with student name
+student_name = "Felix"  # Replace with student name
 
 def call_gpt4_api(prompt):
     response = client.chat.completions.create(
@@ -38,9 +38,9 @@ def call_gpt4_api(prompt):
     return response.choices[0].message.content
 
 def main():
-    transcript_file_path = '/Users/admin/Desktop/Masters/Trial 4 Oral Exams/Trial 1 Transcripts empty confidence/Theo/Theo empty.docx'
-    questions_file_path = '/Users/admin/Desktop/Masters/Trial 1 Oral Exams/Questions/Theo questions.docx'
-    base_output_path = '/Users/admin/Desktop/Masters/Trial 4 Oral Exams/Trial 1 Transcripts empty confidence/Theo/Results'
+    transcript_file_path = '/Users/admin/Desktop/Masters/Trial 1 Oral Exams/Transcripts/Felix Transcript.docx'
+    questions_file_path = '/Users/admin/Desktop/Masters/Trial 1 Oral Exams/Questions/Felix questions.docx'
+    base_output_path = '/Users/admin/Desktop/Masters/Trial 1 Oral Exams/Results/Felix'
 
     transcript = read_file(transcript_file_path)
     questions = read_file(questions_file_path)
