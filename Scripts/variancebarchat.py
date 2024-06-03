@@ -14,6 +14,9 @@ data = {
 
 df = pd.DataFrame(data)
 
+# Set global font size to 18
+plt.rcParams.update({'font.size': 18})
+
 # Plotting the variances
 plt.figure(figsize=(12, 6))
 x = range(len(df['Participant']))
