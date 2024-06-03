@@ -17,7 +17,7 @@ ssl._create_default_https_context = default_https_context
 nltk.download('punkt')
 
 # Load data from Excel
-df = pd.read_excel('/Users/admin/Desktop/Masters/Trial 2 Oral Exams/Excels/Trial II unedited feedback.xlsx')
+df = pd.read_excel('') # Insert path for feedback
 #print(df.columns)
 
 # Function to perform text analysis
@@ -49,12 +49,10 @@ for column in feedback_columns:
     df[column + '_Analysis'] = df[column].apply(analyze_text)
 
 # File to save results
-with open('/Users/admin/Desktop/Masters/Trial 2 Oral Exams/Feedback Analysis Results/Unedited Feedback Analysis Results.txt', 'w') as file:
+with open('', 'w') as file: # Insert file path to save results
     for column in feedback_columns:
         # Aggregate results for each column
         aggregated_results = df[column + '_Analysis'].dropna().apply(pd.Series).mean()
         print(f'Aggregated Results for {column}:', file=file)
         print(aggregated_results, file=file)
         print('\n', file=file)
-
-print("Analysis results have been saved to 'Unedited Feedback Analysis Results.txt'")

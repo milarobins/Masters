@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Data from the image
+# Insert data manually or upload and read excel file
 data = {
     'Dataset1': [11, 10.5, 12.5, 17, 12, 13, 12, 10.5, 12, 11, 13.5, 9],
     'Dataset2': [16, 13.5, 15, 10.5, 11.5, 8, 11, 10, 7, 21.5, 11, 20]

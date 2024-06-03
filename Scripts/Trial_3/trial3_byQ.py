@@ -43,11 +43,11 @@ def call_gpt4_api(prompt):
     return response.choices[0].message.content
 
 def main():
-    base_transcript_path = '/Users/admin/Desktop/Masters/Trial 3 Oral Exams/Transcripts'
-    base_question_path = '/Users/admin/Desktop/Masters/Trial 3 Oral Exams/Questions'
-    base_output_path = '/Users/admin/Desktop/Masters/Trial 3 Oral Exams/Results'
+    base_transcript_path = '' # Insert file path to transcript
+    base_question_path = '' # Insert file path to exam questions
+    base_output_path = '' # Insert file path for results to be saved
 
-    student_name = "Chang"  # Replace with student name
+    student_name = ""  # Replace with student name
     transcript_file_path = os.path.join(base_transcript_path, f'{student_name} Transcript.docx')
     transcript = read_file(transcript_file_path)
 

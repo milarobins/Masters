@@ -6,7 +6,7 @@ import seaborn as sns
 sns.set(style="whitegrid")
 
 # Load the results from the CSV file
-results_path = '/Users/admin/Desktop/Masters/Trial 2 Oral Exams/Feedback Analysis Results.csv'
+results_path = '' # Insert file path to CSV where results have been stored
 visualization_df = pd.read_csv(results_path, index_col=0).transpose()
 #print(visualization_df.columns)
 

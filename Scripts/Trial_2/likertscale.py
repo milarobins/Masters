@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the data from the Excel file
-df = pd.read_excel('/Users/admin/Desktop/Masters/Trial 2 Oral Exams/Excels/Likert only.xlsx')
+df = pd.read_excel('') # Insert path to survey Likert scale data
 #print(df.head())
 
 # Set global font size to 14

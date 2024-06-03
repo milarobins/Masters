@@ -8,13 +8,13 @@ model_size = "large-v3"
 model = WhisperModel(model_size, device="cpu", compute_type="int8")
 
 # Transcribe the audio file
-segments, info = model.transcribe("/Users/admin/Desktop/Masters/Trial 2 Oral Exams/Michael Robins Exam.m4a", beam_size=5)
+segments, info = model.transcribe("", beam_size=5) # Insert path for audio file
 
 # Print and save the detected language
 print("Detected language '%s' with probability %f" % (info.language, info.language_probability))
 
 # Open a file to save the transcription
-with open("/Users/admin/Desktop/Masters/Trial 2 Oral Exams/Michael Transcript unedited.txt", "w") as file:
+with open("/", "w") as file: # Insert path for transcript to be saved
     file.write("Detected language '%s' with probability %f\n\n" % (info.language, info.language_probability))
     
     for segment in segments:
