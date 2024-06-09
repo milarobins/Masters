@@ -15,10 +15,10 @@ The research is structured around four trials to:
 The findings indicate that GPT can effectively mark transcripts with less variance compared to different human examiners and generate personalized feedback which participants find useful. However, GPT can be influenced by the language in transcripts, especially from professors. Tests show that modifications which emulate a “cruel professor” can significantly impact GPT’s marking (p=0.003). The quality of feedback also varies; the most constructive results from a transcript that has been pre-processed to remove over-enthusiastic phrases from the professor such as “perfect”, or “very very good”. Despite limitations due to non-verbal communication and native language considerations, this research indicates GPT’s potential as a consistent and efficient assessor for oral examinations in STEM.
 
 ## Repository Structure
-The scripts in this repository are organized around four trials. Each subfolder contains the Python script to mark and provide feedback on oral examination transcripts. Due to privacy reasons, transcripts are not provided, but exam questions and clear instructions are included in each `.py` file for uploading your own transcripts.
+The scripts in this repository are organized around four trials. Each subfolder contains the Python script to mark and provide feedback on oral examination transcripts. Due to privacy reasons, transcripts used in this research are not provided, but exam questions from trial II and III and instructions for uploading your own transcripts are included in each `.py` file.
 
 ### Trials Overview
-- **Trial 1:** Least relevant, based on an oral examination specific to Imperial College London.
+- **Trial 1:** Based on an oral examination specific to Imperial College London students.
 - **Trial 2:** Easily conducted oral examination with 5 STEM-related questions.
 - **Trial 3:** Rigorous engineering maths-based oral examination designed for this research.
 - **Trial 4:** Includes various tests and the pre-processing script recommended for transcript preparation before marking.
