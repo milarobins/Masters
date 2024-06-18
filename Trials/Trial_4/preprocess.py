@@ -64,8 +64,8 @@ def process_transcripts(input_directory, output_directory):
             print(f"Transcript cleaning complete for {filename}. Cleaned transcript saved to: {output_file_path}")
 
 def main():
-    input_directory = '/Users/admin/Desktop/Masters/Trial 4 Oral Exams/Preprocess testing'
-    output_directory = '/Users/admin/Desktop/Masters/Trial 4 Oral Exams/Preprocess testing/Results'
+    input_directory = '' # insert file path for input transcript
+    output_directory = '' # insert file path for results
 
     # Create the output directory if it doesn't exist
     if not os.path.exists(output_directory):
